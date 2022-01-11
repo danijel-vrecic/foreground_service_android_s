@@ -1,16 +1,20 @@
 package com.android.foreground
 
 import android.app.Application
+import android.app.ForegroundServiceStartNotAllowedException
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import androidx.core.content.getSystemService
 
 class MyApp : Application() {
-
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
-        startForegroundService(DummyForegroundService.getCallingIntent(this))
+        try {
+            startForegroundService(DummyForegroundService.getCallingIntent(this))
+        } catch (e: ForegroundServiceStartNotAllowedException) {
+            e.printStackTrace()
+        }
     }
 
     private fun createNotificationChannel() {
