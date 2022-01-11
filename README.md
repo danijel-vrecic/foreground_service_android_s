@@ -26,4 +26,4 @@ Caused by: android.app.ForegroundServiceStartNotAllowedException: startForegroun
 2. Run the app.
 3. Terminate the app at least 3x in a row from the Android Studio - Logcat tab (Terminate button). Remember, if foreground service is killed, there is a certain amount of time, when service can be restarted. (1s, 4, 16s, ..., 64s). You need to wait to service restart the app and then kill the process again.
 4. After the third termination and restart of the service, open the app and start a worker.
-5. Then terminate the app again. (Terminate button) and the worker will cause an app crash.
+5. Then terminate the app again (Terminate button) and the worker will cause an app crash.
