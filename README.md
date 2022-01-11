@@ -33,3 +33,6 @@ Here is the catch. If the scheduled worker is triggered before the system restar
 ```
 Caused by: android.app.ForegroundServiceStartNotAllowedException: startForegroundService() not allowed due to mAllowStartForeground false: service {service_name}
 ```
+
+# Kudos
+Thanks to [Grega](https://github.com/muscardinus), who discovered the issue and helped me with the case.
