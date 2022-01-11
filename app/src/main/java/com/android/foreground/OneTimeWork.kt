@@ -18,7 +18,7 @@ class OneTimeWork(context: Context, workerParameters: WorkerParameters) :
         fun newOneTimeWork(): OneTimeWorkRequest {
             return OneTimeWorkRequestBuilder<OneTimeWork>()
                 .addTag(TAG)
-                .setInitialDelay(6, TimeUnit.SECONDS)
+                .setInitialDelay(8, TimeUnit.SECONDS)
                 .build()
         }
     }
