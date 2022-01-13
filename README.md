@@ -22,7 +22,7 @@ Here is the catch. If the scheduled worker is triggered before the system restar
 1. Run the app.
 2. Terminate the app at least 3x in a row from the Android Studio - Logcat tab (Terminate button). Remember, if foreground service is killed, there is a certain amount of time, when service can be restarted. (1s, 4, 16s, ..., 64s). You need to wait for the system to restart the app and then kill the process again.
 3. After the third termination and restart of the service, open the app and start a worker.
-4. Then terminate the app again (Terminate button) and wait for the worker. Catch the exception to prevent crashing the app, but in that case, the STICKY service won't be restarted after a certain amount of time.
+4. Then terminate the app again (Terminate button) and wait for the worker. The foreground service exception is caught to prevent the app from crashing, but in this case, the STICKY service won't be restarted by the system after a certain amount of time as it was scheduled.
 
 ### Case 2 (bug/the-worker-causes-an-app-crash)
 1. Run the app.
